@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: base_restaurants
+    description: This models contains data about restaurants informations
+    columns:
+      - name: IDENTIFIER
+        tests:
+        - not_null
+        - unique
+      - name: NAME
+        tests:
+          - not_null
+      - name: ADDRESS
+        tests:
+          - not_null
+      - name: NB_EMPLOYEES
+        tests:
+          - not_null
+      - name: OPEN_ON_SUNDAY
+        tests:
+          - not_null
