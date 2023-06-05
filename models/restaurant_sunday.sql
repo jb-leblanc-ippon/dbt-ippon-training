@@ -1,1 +1,1 @@
-select * from {{ref("restaurants")}} where open_on_sundays::BOOLEAN 
+select * EXCLUDE open_on_sundays from {{ref("restaurants")}} where open_on_sundays::BOOLEAN
