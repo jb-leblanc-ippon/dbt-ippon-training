@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: restaurant
+    description: This database contains data about restaurants business
+    database: DB_DBT_JBLEBLANC_DEV
+    schema: SOURCE  
+    tables:
+      - name: ORDERS
+        description: This table contains orders from all restaurants
+        columns:
+        - name: IDENTIFIER
+          tests:
+            - not_null
+        - name: RESTAURANT_IDENTIFIER
+          tests:
+            - not_null
+            - relationships:
+                to: source("restaurant", "RESTAURANTS")
+                field: IDENTIFIER
+        - name: PAYMENT_METHOD
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['cash','meal_ticket','card','cheque']
+        - name: AMOUNT
+          tests:
+            - not_null
+
+      - name: RESTAURANTS
+        description: This table contains the description of all restaurants
+        columns:
+        - name: IDENTIFIER
+          tests:
+          - not_null
+          - unique
+        - name: NAME
+          tests:
+            - not_null
+        - name: ADDRESS
+          tests:
+            - not_null
+        - name: NB_EMPLOYEES
+          tests:
+            - not_null
+        - name: OPEN_ON_SUNDAY
+          tests:
+            - not_null
