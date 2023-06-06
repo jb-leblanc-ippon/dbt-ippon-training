@@ -6,5 +6,4 @@ models:
     tests:
       - dbt_utils.equality:
           compare_model: ref('expected_restaurants__turnover_ordered')
-          tags: ['ci']
-    
+          tags: ["ci"]
