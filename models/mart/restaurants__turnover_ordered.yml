@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: restaurants__turnover_ordered
+    description: This models contains rank of restaurant by turnover
+    tests:
+      - dbt_utils.equality:
+          compare_model: ref('expected_restaurants__turnover_ordered')
+          tags: ["ci"]

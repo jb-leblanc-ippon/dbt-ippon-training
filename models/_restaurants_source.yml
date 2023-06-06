@@ -46,3 +46,26 @@ sources:
         - name: OPEN_ON_SUNDAY
           tests:
             - not_null
+        
+      - name: DISHES
+        description: This table contains the description of dishes
+        columns:
+        - name: IDENTIFIER
+          tests:
+          - not_null
+          - unique
+        - name: NAME
+          tests:
+            - not_null
+        - name: SELLING_PRICE
+          tests:
+            - not_null
+        - name: PRODUCTION_COST
+          tests:
+            - not_null
+        - name: TYPE
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['dessert','boisson','plat','entree']
+

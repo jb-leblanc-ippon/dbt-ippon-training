@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: restaurants__benefits_orders_hourly
+    description: This models contains list of order which dished details and hour of command
