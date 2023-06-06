@@ -39,3 +39,6 @@ models:
 
 seeds:
   full_refresh: true
+
+vars:
+  nb_restaurants_to_show: 4
